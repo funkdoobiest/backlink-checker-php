@@ -17,9 +17,9 @@
   },
   "require": {
     "php": ">=5.4.0",
-    "sunra/php-simple-html-dom-parser": "~v1.5.2",
     "guzzlehttp/guzzle": "~6.3.3",
-    "nesk/puphpeteer": "~1.4.0"
+    "nesk/puphpeteer": "~1.4.0",
+    "kub-at/php-simple-html-dom-parser": "^1.8"
   },
   "autoload": {
     "psr-4": {

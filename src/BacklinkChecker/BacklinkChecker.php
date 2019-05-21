@@ -2,7 +2,7 @@
 
 namespace Valitov\BacklinkChecker;
 
-use Sunra\PhpSimple\HtmlDomParser;
+use KubAT\PhpSimple\HtmlDomParser;
 
 /**
  * Class BacklinkChecker
