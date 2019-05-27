@@ -81,11 +81,12 @@ abstract class BacklinkChecker
     /**
      * @param string $url
      * @param boolean $makeScreenshot
+     * @param integer $timeout
      * @return HttpResponse
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      */
-    abstract protected function browsePage($url, $makeScreenshot);
+    abstract protected function browsePage($url, $makeScreenshot, $timeout);
 
     /**
      * @param string $url
@@ -93,11 +94,12 @@ abstract class BacklinkChecker
      * @param bool $scanLinks
      * @param bool $scanImages
      * @param boolean $makeScreenshot
+     * @param integer $timeout
      * @return BacklinkData
      */
-    public function getBacklinks($url, $pattern, $scanLinks = true, $scanImages = false, $makeScreenshot = false)
+    public function getBacklinks($url, $pattern, $scanLinks = true, $scanImages = false, $makeScreenshot = false, $timeout = 60)
     {
-        $response = $this->browsePage($url, $makeScreenshot);
+        $response = $this->browsePage($url, $makeScreenshot, $timeout);
 
         if (!$response->getSuccess())
             $backlinks = [];

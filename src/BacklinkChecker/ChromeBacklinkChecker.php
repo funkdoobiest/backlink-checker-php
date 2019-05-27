@@ -16,7 +16,7 @@ class ChromeBacklinkChecker extends BacklinkChecker
      * @throws \RuntimeException
      * @todo Add support for response headers
      */
-    protected function browsePage($url, $makeScreenshot)
+    protected function browsePage($url, $makeScreenshot, $timeout)
     {
         $puppeteer = new Puppeteer();
         /**

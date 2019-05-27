@@ -15,11 +15,12 @@ class SimpleBacklinkChecker extends BacklinkChecker
     /**
      * @param string $url
      * @param boolean $makeScreenshot
+     * @param integer $timeout
      * @return HttpResponse
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      */
-    protected function browsePage($url, $makeScreenshot)
+    protected function browsePage($url, $makeScreenshot, $timeout = 60)
     {
         if (!is_string($url))
             throw new \InvalidArgumentException("Argument must be string");
@@ -27,6 +28,7 @@ class SimpleBacklinkChecker extends BacklinkChecker
         try {
             /** @noinspection SpellCheckingInspection */
             $response = $client->request('GET', $url, [
+                'timeout' => $timeout,
                 'headers' => [
                     'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
                 ]
