@@ -18,7 +18,6 @@
   "require": {
     "php": ">=5.4.0",
     "guzzlehttp/guzzle": "^6.5",
-    "nesk/puphpeteer": "^1.6.0",
     "kub-at/php-simple-html-dom-parser": "^1.8"
   },
   "autoload": {
